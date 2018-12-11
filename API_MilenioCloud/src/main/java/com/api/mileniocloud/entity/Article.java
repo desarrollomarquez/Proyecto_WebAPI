@@ -4,6 +4,8 @@ public class Article {
     private int articleId;  
     private String title;
 	private String category;
+	
+	
 	public int getArticleId() {
 		return articleId;
 	}
