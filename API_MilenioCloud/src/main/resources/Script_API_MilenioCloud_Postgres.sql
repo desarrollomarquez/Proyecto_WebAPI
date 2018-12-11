@@ -10,6 +10,7 @@ INSERT INTO articles VALUES (1,'Sprint', 'Backend');
 INSERT INTO articles VALUES (2,'Sprintboot', 'Frontend');
 INSERT INTO articles VALUES (3,'Sprintbootrest', 'database');
 
+SELECT current_date
 
 CREATE TABLE COLEGIO (
 	 codigo_id SERIAL PRIMARY KEY,
@@ -25,6 +26,11 @@ CREATE TABLE COLEGIO (
 	 foto            VARCHAR(100) NOT NULL
 	 
 );
+
+INSERT INTO public.colegio(
+            codigo_id, nit, nombre, codigo_colegio, codigo_dane, direccion, 
+            telefono, fini_fiscal, ffin_fiscal, ubicacion_geo, foto)
+    VALUES (1, 90012354, 'Fe y Alegria', 52, 201, 'CALLE MENTIRAS', '20121020', current_date , current_date, (121212,313131), 'Ruta/fotos');
 
 
 SELECT * FROM COLEGIO
