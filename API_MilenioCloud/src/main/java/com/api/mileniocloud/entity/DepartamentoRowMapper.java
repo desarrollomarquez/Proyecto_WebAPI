@@ -10,8 +10,8 @@ public class DepartamentoRowMapper implements RowMapper<Departamento> {
 	@Override
 	public Departamento mapRow(ResultSet row, int rowNum) throws SQLException {
 		Departamento departamento = new Departamento();
-		departamento.setUuid(row.getString("uuid"));
 		departamento.setCodigo_id(row.getString("codigo_id"));
+		departamento.setCodigo(row.getString("codigo"));
 		departamento.setNombre(row.getString("nombre"));
 		departamento.setLatitud(row.getString("latitud"));
 		departamento.setLongitud(row.getString("longitud"));

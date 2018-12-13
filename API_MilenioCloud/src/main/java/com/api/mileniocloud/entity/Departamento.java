@@ -2,23 +2,23 @@ package com.api.mileniocloud.entity;
 
 public class Departamento {
 	
-	private String uuid;
-	private String codigo_id;  
+	private String codigo_id;
+	private String codigo;  
 	private String nombre;
 	private String latitud;
 	private String longitud;
 	
-	public String getUuid() {
-		return uuid;
-	}
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
 	public String getCodigo_id() {
 		return codigo_id;
 	}
 	public void setCodigo_id(String codigo_id) {
 		this.codigo_id = codigo_id;
+	}
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
 	}
 	public String getNombre() {
 		return nombre;
@@ -38,6 +38,7 @@ public class Departamento {
 	public void setLongitud(String longitud) {
 		this.longitud = longitud;
 	}
+	
 	
 	
 	
