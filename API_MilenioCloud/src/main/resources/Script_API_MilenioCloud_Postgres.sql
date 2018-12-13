@@ -43,11 +43,11 @@ SELECT * FROM COLEGIO
 
 
 CREATE TABLE departamento (
-	 uuid      VARCHAR(50) NOT NULL PRIMARY KEY,
-	 codigo_id VARCHAR(20) NOT NULL,
-	 nombre    VARCHAR(300) NOT NULL,
-	 latitud   VARCHAR(50),	
-	 longitud  VARCHAR(50)
+	 codigo_id      VARCHAR(50) NOT NULL PRIMARY KEY,
+	 codigo         VARCHAR(20) NOT NULL,
+	 nombre    	VARCHAR(300) NOT NULL,
+	 latitud   	VARCHAR(50),	
+	 longitud  	VARCHAR(50)
 );
 
 SELECT * FROM departamento
@@ -61,7 +61,7 @@ INSERT INTO departamento VALUES( gen_random_uuid(),'08','Atlantico','10.75','-75
 INSERT INTO departamento VALUES( gen_random_uuid(),'13','Bolivar','9','-74.3333333' );
 INSERT INTO departamento VALUES( gen_random_uuid(),'15','Boyaca','5.5','-72.5' );
 INSERT INTO departamento VALUES( gen_random_uuid(),'17','Caldas','5.25','-75.5' );
-INSERT INTO departamento VALUES( gen_random_uuid(),'18','Caqueta¡','1','-74' );
+INSERT INTO departamento VALUES( gen_random_uuid(),'18','Caqueta','1','-74' );
 INSERT INTO departamento VALUES( gen_random_uuid(),'85','Casanare','5.5','-71.5' );
 INSERT INTO departamento VALUES( gen_random_uuid(),'19','Cauca','2.5','-76.8333333' );
 INSERT INTO departamento VALUES( gen_random_uuid(),'20','Cesar','9.3333333','-73.5' );
@@ -87,4 +87,9 @@ INSERT INTO departamento VALUES( gen_random_uuid(),'76','Valle del Cauca','3.75'
 INSERT INTO departamento VALUES( gen_random_uuid(),'97','Vaupes','0.25','-70.75' );
 INSERT INTO departamento VALUES( gen_random_uuid(),'99','Vichada','5','-69.5' );
 
+
+SELECT * FROM (
+  SELECT *, ROW_NUMBER () OVER (ORDER BY nombre)
+  FROM departamento
+) x WHERE ROW_NUMBER BETWEEN 10 AND 20;
 
