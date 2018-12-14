@@ -93,3 +93,25 @@ SELECT * FROM (
   FROM departamento
 ) x WHERE ROW_NUMBER BETWEEN 10 AND 20;
 
+
+
+CREATE OR REPLACE FUNCTION departamento( v_codigo_id VARCHAR(50), v_codigo VARCHAR(20), v_nombre VARCHAR(300), v_latitud VARCHAR(50), v_longitud VARCHAR(50) )
+  RETURNS BOOLEAN AS $$
+DECLARE
+  id_insert INTEGER;
+  cantidad_datos INTEGER;
+  temporal INTEGER;
+  nombre_tabla VARCHAR := 'departamento';
+  atributos_tabla VARCHAR := 'codigo_id, codigo, nombre, latitud, longitud';
+  c_atributos_tabla VARCHAR := '$1, $2, $3, $4, $5';
+BEGIN
+  BEGIN
+    EXECUTE format('INSERT INTO %I  (' || atributos_tabla || ')  VALUES(' || c_atributos_tabla ||') ', nombre_tabla)
+    USING v_codigo_id, v_codigo, v_nombre, v_latitud, v_longitud;
+    RETURN true;
+    EXCEPTION WHEN OTHERS THEN
+    RETURN 0;
+  END;
+END;
+$$ LANGUAGE plpgsql;
+
