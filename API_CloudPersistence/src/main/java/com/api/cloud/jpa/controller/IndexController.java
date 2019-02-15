@@ -1,4 +1,4 @@
-package com.api.mileniocloud.jpa.controller;
+package com.api.cloud.jpa.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package com.api.mileniocloud.jpa.model;
+package com.api.cloud.jpa.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;

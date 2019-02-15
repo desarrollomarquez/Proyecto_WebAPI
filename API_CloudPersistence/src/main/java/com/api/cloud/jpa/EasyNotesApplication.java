@@ -1,4 +1,4 @@
-package com.api.mileniocloud.jpa;
+package com.api.cloud.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

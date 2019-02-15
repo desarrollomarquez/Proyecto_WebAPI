@@ -1,4 +1,4 @@
-package com.example.easynotes;
+package com.api.cloud.jpa.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

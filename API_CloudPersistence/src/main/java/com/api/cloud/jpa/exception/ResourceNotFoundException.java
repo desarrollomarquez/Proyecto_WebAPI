@@ -1,4 +1,4 @@
-package com.api.mileniocloud.jpa.exception;
+package com.api.cloud.jpa.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

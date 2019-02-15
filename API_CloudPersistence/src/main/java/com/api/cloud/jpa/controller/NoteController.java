@@ -1,8 +1,8 @@
-package com.api.mileniocloud.jpa.controller;
+package com.api.cloud.jpa.controller;
 
-import com.api.mileniocloud.jpa.exception.ResourceNotFoundException;
-import com.api.mileniocloud.jpa.model.Note;
-import com.api.mileniocloud.jpa.repository.NoteRepository;
+import com.api.cloud.jpa.exception.ResourceNotFoundException;
+import com.api.cloud.jpa.model.Note;
+import com.api.cloud.jpa.repository.NoteRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
