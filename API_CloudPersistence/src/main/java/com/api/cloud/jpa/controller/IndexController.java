@@ -11,6 +11,6 @@ public class IndexController {
 
     @GetMapping
     public String sayHello() {
-        return "Hola y Bienvenido Lucho al API de Inventario (Milenio - Cloud)";
+        return "Hola y Bienvenido  al API de Cloud";
     }
 }
