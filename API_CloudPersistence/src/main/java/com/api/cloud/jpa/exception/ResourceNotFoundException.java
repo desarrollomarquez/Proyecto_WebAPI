@@ -8,6 +8,7 @@ public class ResourceNotFoundException extends RuntimeException {
     private String resourceName;
     private String fieldName;
     private Object fieldValue;
+    private String sincontenido;
 
     public ResourceNotFoundException( String resourceName, String fieldName, Object fieldValue) {
         super(String.format("%s not found with %s : '%s'", resourceName, fieldName, fieldValue));
@@ -15,7 +16,8 @@ public class ResourceNotFoundException extends RuntimeException {
         this.fieldName = fieldName;
         this.fieldValue = fieldValue;
     }
-
+    
+ 
     public String getResourceName() {
         return resourceName;
     }
@@ -27,4 +29,12 @@ public class ResourceNotFoundException extends RuntimeException {
     public Object getFieldValue() {
         return fieldValue;
     }
+
+
+	public String getSincontenido() {
+		return sincontenido = "La tabla esta sin contenido";
+	}
+
+
+    
 }

@@ -3,13 +3,13 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 <modelVersion>4.0.0</modelVersion>
 
-<groupId>com.api.mileniocloud.jpa</groupId>
-<artifactId>API_MilenioCloudPersistence</artifactId>
+<groupId>com.api.cloud.jpa</groupId>
+<artifactId>API_CloudPersistence</artifactId>
 <version>1.0.0</version>
 <packaging>jar</packaging>
 
-<name>API_MilenioCloudPersistence</name>
-<description>Rest API for API_MilenioCloudPersistence</description>
+<name>API_CloudPersistence</name>
+<description>Rest API for API_CloudPersistence</description>
 
 <parent>
 <groupId>org.springframework.boot</groupId>
