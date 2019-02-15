@@ -3,13 +3,13 @@ package com.api.cloud.jpa.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.cloud.jpa.model.Note;
+import com.api.cloud.jpa.model.Auto;
 
 /**
- * Created by rajeevkumarsingh on 27/06/17.
+ * Created by diego on 14/02/19.
  */
 
 @Repository
-public interface NoteRepository extends JpaRepository<Note, Long> {
+public interface AutoRepository extends JpaRepository<Auto, Long> {
 
 }

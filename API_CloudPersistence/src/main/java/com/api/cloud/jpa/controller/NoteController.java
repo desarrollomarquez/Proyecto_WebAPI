@@ -1,8 +1,8 @@
 package com.api.cloud.jpa.controller;
 
 import com.api.cloud.jpa.exception.ResourceNotFoundException;
-import com.api.cloud.jpa.model.Note;
-import com.api.cloud.jpa.repository.NoteRepository;
+import com.api.cloud.jpa.model.Auto;
+import com.api.cloud.jpa.repository.AutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,41 +19,41 @@ import java.util.List;
 public class NoteController {
 
     @Autowired
-    NoteRepository noteRepository;
+    AutoRepository noteRepository;
 
     @GetMapping("/notes")
-    public List<Note> getAllNotes() {
+    public List<Auto> getAllNotes() {
         return noteRepository.findAll();
     }
 
     @PostMapping("/notes")
-    public Note createNote(@Valid @RequestBody Note note) {
+    public Auto createNote(@Valid @RequestBody Auto note) {
         return noteRepository.save(note);
     }
 
     @GetMapping("/notes/{id}")
-    public Note getNoteById(@PathVariable(value = "id") Long noteId) {
+    public Auto getNoteById(@PathVariable(value = "id") Long noteId) {
         return noteRepository.findById(noteId)
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
     }
 
     @PutMapping("/notes/{id}")
-    public Note updateNote(@PathVariable(value = "id") Long noteId,
-                                           @Valid @RequestBody Note noteDetails) {
+    public Auto updateNote(@PathVariable(value = "id") Long noteId,
+                                           @Valid @RequestBody Auto noteDetails) {
 
-        Note note = noteRepository.findById(noteId)
+        Auto note = noteRepository.findById(noteId)
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
 
         note.setTitle(noteDetails.getTitle());
         note.setContent(noteDetails.getContent());
 
-        Note updatedNote = noteRepository.save(note);
+        Auto updatedNote = noteRepository.save(note);
         return updatedNote;
     }
 
     @DeleteMapping("/notes/{id}")
     public ResponseEntity<?> deleteNote(@PathVariable(value = "id") Long noteId) {
-        Note note = noteRepository.findById(noteId)
+        Auto note = noteRepository.findById(noteId)
                 .orElseThrow(() -> new ResourceNotFoundException("Note", "id", noteId));
 
         noteRepository.delete(note);

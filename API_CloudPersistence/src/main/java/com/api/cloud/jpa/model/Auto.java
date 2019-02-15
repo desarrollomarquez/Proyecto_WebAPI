@@ -10,23 +10,23 @@ import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 /**
- * Created by rajeevkumarsingh on 27/06/17.
+ * Created by diego on 14/02/19.
  */
 @Entity
-@Table(name = "notes")
+@Table(name = "autos")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)
-public class Note {
+public class Auto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @NotBlank
-    private String title;
+    private String placa;
 
     @NotBlank
-    private String content;
+    private String modelo;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -38,44 +38,45 @@ public class Note {
     @LastModifiedDate
     private Date updatedAt;
 
-    public Long getId() {
-        return id;
-    }
+	public Long getId() {
+		return id;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    public String getTitle() {
-        return title;
-    }
+	public String getPlaca() {
+		return placa;
+	}
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+	public void setPlaca(String placa) {
+		this.placa = placa;
+	}
 
-    public String getContent() {
-        return content;
-    }
+	public String getModelo() {
+		return modelo;
+	}
 
-    public void setContent(String content) {
-        this.content = content;
-    }
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
+	public Date getCreatedAt() {
+		return createdAt;
+	}
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
 
-    public Date getUpdatedAt() {
-        return updatedAt;
-    }
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
 
-    public void setUpdatedAt(Date updatedAt) {
-        this.updatedAt = updatedAt;
-    }
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
 
+    
 }
