@@ -13,7 +13,7 @@ import java.util.Date;
  * Created by diego on 14/02/19.
  */
 @Entity
-@Table(name = "autos")
+@Table(name = "persona")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)
@@ -22,11 +22,14 @@ public class Persona {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private Integer identificacion;
+    
+    
     @NotBlank
-    private String placa;
+    private String nombres;
 
     @NotBlank
-    private String modelo;
+    private String apellidos;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
@@ -46,20 +49,30 @@ public class Persona {
 		this.id = id;
 	}
 
-	public String getPlaca() {
-		return placa;
+	
+
+	public Integer getIdentificacion() {
+		return identificacion;
 	}
 
-	public void setPlaca(String placa) {
-		this.placa = placa;
+	public void setIdentificacion(Integer identificacion) {
+		this.identificacion = identificacion;
 	}
 
-	public String getModelo() {
-		return modelo;
+	public String getNombres() {
+		return nombres;
 	}
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
 
 	public Date getCreatedAt() {
