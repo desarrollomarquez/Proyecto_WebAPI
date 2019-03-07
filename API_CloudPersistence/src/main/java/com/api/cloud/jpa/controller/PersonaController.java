@@ -1,7 +1,7 @@
 package com.api.cloud.jpa.controller;
 
 import com.api.cloud.jpa.exception.ResourceNotFoundException;
-import com.api.cloud.jpa.model.Auto;
+import com.api.cloud.jpa.model.Persona;
 import com.api.cloud.jpa.repository.AutoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +21,17 @@ public class PersonaController {
     @Autowired
     AutoRepository autoRepository;
 
-    @GetMapping("/autos")
-    public List<Auto> getAllNotes() {
-        return autoRepository.findAll();
+    @GetMapping("/personas")
+    public List<Persona> getAllNotes() {
+        return personaRepository.findAll();
     }
 
-    @PostMapping("/autos")
-    public Auto createAuto(@Valid @RequestBody Auto auto) {
-        return autoRepository.save(auto);
+    @PostMapping("/personas")
+    public Persona createPersona(@Valid @RequestBody Persona persona) {
+        return personaRepository.save(persona);
     }
 
-    @GetMapping("/autos/{id}")
+    @GetMapping("/personas/{id}")
     public Auto getAutoById(@PathVariable(value = "id") Long autoId) {
         return autoRepository.findById(autoId)
                 .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
