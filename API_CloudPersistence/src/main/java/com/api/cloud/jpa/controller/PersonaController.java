@@ -3,6 +3,7 @@ package com.api.cloud.jpa.controller;
 import com.api.cloud.jpa.exception.ResourceNotFoundException;
 import com.api.cloud.jpa.model.Persona;
 import com.api.cloud.jpa.repository.AutoRepository;
+import com.api.cloud.jpa.repository.PersonaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +20,7 @@ import java.util.List;
 public class PersonaController {
 
     @Autowired
-    AutoRepository autoRepository;
+    PersonaRepository personaRepository;
 
     @GetMapping("/personas")
     public List<Persona> getAllNotes() {
@@ -32,9 +33,9 @@ public class PersonaController {
     }
 
     @GetMapping("/personas/{id}")
-    public Auto getAutoById(@PathVariable(value = "id") Long autoId) {
-        return autoRepository.findById(autoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+    public Persona getPersonaById(@PathVariable(value = "id") Long PersonaId) {
+        return personaRepository.findById(personaId)
+                .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
     }
 
     @PutMapping("/autos/{id}")
