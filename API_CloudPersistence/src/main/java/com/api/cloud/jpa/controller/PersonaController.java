@@ -38,15 +38,15 @@ public class PersonaController {
                 .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
     }
 
-    @PutMapping("/autos/{id}")
-    public Auto updateAuto(@PathVariable(value = "id") Long autoId,
-                                           @Valid @RequestBody Auto autoDetails) {
+    @PutMapping("/personas/{id}")
+    public Persona updatePersona(@PathVariable(value = "id") Long personaId,
+                                           @Valid @RequestBody Persona personaDetails) {
 
-        Auto auto = autoRepository.findById(autoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+        Persona persona = personaRepository.findById(personaId)
+                .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
 
-        auto.setPlaca(autoDetails.getPlaca());
-        auto.setModelo(autoDetails.getModelo());
+        persona.setIdentificacion(personaDetails.getIdentificacion());          
+        persona.setNombres(personaDetails.getNombres());
         
 
         Auto updatedAuto = autoRepository.save(auto);
