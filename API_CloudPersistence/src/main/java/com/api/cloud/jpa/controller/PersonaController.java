@@ -51,16 +51,16 @@ public class PersonaController {
         
         
 
-        Auto updatedAuto = autoRepository.save(auto);
-        return updatedAuto;
+        Persona updatedPersona = personaRepository.save(persona);
+        return updatedPersona;
     }
 
-    @DeleteMapping("/autos/{id}")
-    public ResponseEntity<?> deleteAuto(@PathVariable(value = "id") Long autoId) {
-        Auto auto = autoRepository.findById(autoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+    @DeleteMapping("/personas/{id}")
+    public ResponseEntity<?> deletePersona(@PathVariable(value = "id") Long personaId) {
+        Persona persona = personaRepository.findById(personaId)
+                .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
 
-        autoRepository.delete(auto);
+        personaRepository.delete(persona);
 
         return ResponseEntity.ok().build();
     }
