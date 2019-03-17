@@ -33,7 +33,7 @@ public class PersonaController {
     }
 
     @GetMapping("/personas/{id}")
-    public Persona getPersonaById(@PathVariable(value = "id") Long PersonaId) {
+    public Persona getPersonaById(@PathVariable(value = "id") Long personaId) {
         return personaRepository.findById(personaId)
                 .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
     }
