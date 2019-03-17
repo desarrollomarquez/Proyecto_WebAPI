@@ -47,6 +47,8 @@ public class PersonaController {
 
         persona.setIdentificacion(personaDetails.getIdentificacion());          
         persona.setNombres(personaDetails.getNombres());
+        persona.setApellidos(personaDetails.getApellidos());
+        
         
 
         Auto updatedAuto = autoRepository.save(auto);
