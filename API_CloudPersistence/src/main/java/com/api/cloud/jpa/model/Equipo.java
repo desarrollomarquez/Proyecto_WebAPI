@@ -13,7 +13,7 @@ import java.util.Date;
  * Created by diego on 14/02/19.
  */
 @Entity
-@Table(name = "autos")
+@Table(name = "equipos")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
         allowGetters = true)
@@ -23,10 +23,10 @@ public class Equipo {
     private Long id;
 
     @NotBlank
-    private String placa;
+    private String serial;
 
     @NotBlank
-    private String modelo;
+    private String marca;
 
     @Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
