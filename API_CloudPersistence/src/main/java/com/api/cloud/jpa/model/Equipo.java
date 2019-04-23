@@ -46,20 +46,21 @@ public class Equipo {
 		this.id = id;
 	}
 
-	public String getPlaca() {
-		return placa;
+	
+	public String getSerial() {
+		return serial;
 	}
 
-	public void setPlaca(String placa) {
-		this.placa = placa;
+	public void setSerial(String serial) {
+		this.serial = serial;
 	}
 
-	public String getModelo() {
-		return modelo;
+	public String getMarca() {
+		return marca;
 	}
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
+	public void setMarca(String marca) {
+		this.marca = marca;
 	}
 
 	public Date getCreatedAt() {
