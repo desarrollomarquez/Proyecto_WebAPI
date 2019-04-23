@@ -3,6 +3,7 @@ package com.api.cloud.jpa.controller;
 import com.api.cloud.jpa.exception.ResourceNotFoundException;
 import com.api.cloud.jpa.model.Equipo;
 import com.api.cloud.jpa.repository.AutoRepository;
+import com.api.cloud.jpa.repository.EquipoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,30 +27,30 @@ public class EquipoController {
         return equipoRepository.findAll();
     }
 
-    @PostMapping("/autos")
-    public Auto createAuto(@Valid @RequestBody Auto auto) {
-        return autoRepository.save(auto);
+    @PostMapping("/equipos")
+    public Equipo createEquipo(@Valid @RequestBody Equipo equipo) {
+        return equipoRepository.save(equipo);
     }
 
-    @GetMapping("/autos/{id}")
-    public Auto getAutoById(@PathVariable(value = "id") Long autoId) {
-        return autoRepository.findById(autoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+    @GetMapping("/equipos/{id}")
+    public Equipo getEquipoById(@PathVariable(value = "id") Long equipoId) {
+        return equipoRepository.findById(equipoId)
+                .orElseThrow(() -> new ResourceNotFoundException("Equipo", "id", equipoId));
     }
 
-    @PutMapping("/autos/{id}")
-    public Auto updateAuto(@PathVariable(value = "id") Long autoId,
-                                           @Valid @RequestBody Auto autoDetails) {
+    @PutMapping("/equipos/{id}")
+    public Equipo updateEquipo(@PathVariable(value = "id") Long equipoId,
+                                           @Valid @RequestBody Equipo equipoDetails) {
 
-        Auto auto = autoRepository.findById(autoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+        Equipo equipo = equipoRepository.findById(equipoId)
+                .orElseThrow(() -> new ResourceNotFoundException("Equipo", "id", equipoId));
 
-        auto.setPlaca(autoDetails.getPlaca());
-        auto.setModelo(autoDetails.getModelo());
+        equipo.setId(equipoDetails.getId());
+        equipo.setSerial(equipoDetails.getSerial());
+        equipo.setMarca(equipoDetails.getMarca());
         
-
-        Auto updatedAuto = autoRepository.save(auto);
-        return updatedAuto;
+        Equipo updatedEquipo = equipoRepository.save(equipo);
+        return updatedEquipo;
     }
 
     @DeleteMapping("/autos/{id}")
