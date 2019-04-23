@@ -53,12 +53,12 @@ public class EquipoController {
         return updatedEquipo;
     }
 
-    @DeleteMapping("/autos/{id}")
-    public ResponseEntity<?> deleteAuto(@PathVariable(value = "id") Long autoId) {
-        Auto auto = autoRepository.findById(autoId)
-                .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+    @DeleteMapping("/equipos/{id}")
+    public ResponseEntity<?> deleteEquipo(@PathVariable(value = "id") Long equipoId) {
+        Equipo equipo = equipoRepository.findById(equipoId)
+                .orElseThrow(() -> new ResourceNotFoundException("Equipo", "id", equipoId));
 
-        autoRepository.delete(auto);
+        equipoRepository.delete(equipo);
 
         return ResponseEntity.ok().build();
     }
