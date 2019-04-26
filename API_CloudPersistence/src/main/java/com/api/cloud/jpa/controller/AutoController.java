@@ -57,7 +57,7 @@ public class AutoController {
         Auto auto = autoRepository.findById(autoId)
                 .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
 
-        autoRepository.delete(auto);
+        autoRepository.delete(auto);// Revisar el modelo de datos de este prototipo.....
 
         return ResponseEntity.ok().build();
     }
