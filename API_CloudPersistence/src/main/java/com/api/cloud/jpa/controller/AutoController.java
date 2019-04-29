@@ -46,6 +46,7 @@ public class AutoController {
 
         auto.setPlaca(autoDetails.getPlaca());
         auto.setModelo(autoDetails.getModelo());
+        auto.hashCode();
         
 
         Auto updatedAuto = autoRepository.save(auto);
