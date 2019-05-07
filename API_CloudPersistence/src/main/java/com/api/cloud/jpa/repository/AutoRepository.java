@@ -12,4 +12,5 @@ import com.api.cloud.jpa.model.Auto;
 @Repository
 public interface AutoRepository extends JpaRepository<Auto, Long> {
 
+	
 }

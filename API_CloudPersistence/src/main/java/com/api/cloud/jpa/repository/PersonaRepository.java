@@ -12,4 +12,5 @@ import com.api.cloud.jpa.model.Persona;
 @Repository
 public interface PersonaRepository extends JpaRepository<Persona, Long> {
 
+	
 }
