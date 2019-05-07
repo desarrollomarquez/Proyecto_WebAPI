@@ -13,4 +13,5 @@ import com.api.cloud.jpa.model.Tipo;
 @Repository
 public interface TipoRepository extends JpaRepository<Tipo, Long> {
 
+	
 }
