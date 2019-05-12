@@ -12,4 +12,5 @@ import com.api.cloud.jpa.model.Equipo;
 @Repository
 public interface EquipoRepository extends JpaRepository<Equipo, Long> {
 
+	
 }

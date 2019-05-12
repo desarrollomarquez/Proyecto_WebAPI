@@ -29,7 +29,13 @@ public class PersonaController {
 
     @PostMapping("/personas")
     public Persona createPersona(@Valid @RequestBody Persona persona) {
-        return personaRepository.save(persona);
+        
+    	if(persona.getId() == null || persona.getId().equals(""))
+    	{
+    		return personaRepository.save(persona);	
+    	}
+    	
+    	return personaRepository.save(persona);
     }
 
     @GetMapping("/personas/{id}")
@@ -48,6 +54,7 @@ public class PersonaController {
         persona.setIdentificacion(personaDetails.getIdentificacion());          
         persona.setNombres(personaDetails.getNombres());
         persona.setApellidos(personaDetails.getApellidos());
+        
            
         Persona updatedPersona = personaRepository.save(persona);
         return updatedPersona;
