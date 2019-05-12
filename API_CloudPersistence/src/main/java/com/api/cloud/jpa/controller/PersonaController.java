@@ -19,6 +19,8 @@ import java.util.List;
 @RequestMapping("/api")
 public class PersonaController {
 
+	private String msg = "No aplica Metodo PUT";
+	
     @Autowired
     PersonaRepository personaRepository;
 
@@ -55,13 +57,14 @@ public class PersonaController {
     public Persona getPersonaById(@PathVariable(value = "id") Long personaId) {
         return personaRepository.findById(personaId)
                 .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
+     
     }
 
     @PutMapping("/personas/{id}")
-    public Persona updatePersona(@PathVariable(value = "id") Long personaId,
+    public String updatePersona(@PathVariable(value = "id") Long personaId,
                                            @Valid @RequestBody Persona personaDetails) {
-
-    
+    	   
+        return msg;
     }
 
     @DeleteMapping("/personas/{id}")
