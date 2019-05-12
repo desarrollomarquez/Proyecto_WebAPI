@@ -53,6 +53,54 @@ public class Tipo {
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate
     private Date updatedAt;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getTipoauto() {
+		return tipoauto;
+	}
+
+	public void setTipoauto(String tipoauto) {
+		this.tipoauto = tipoauto;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public String getCilindraje() {
+		return cilindraje;
+	}
+
+	public void setCilindraje(String cilindraje) {
+		this.cilindraje = cilindraje;
+	}
+
+	public Date getCreatedAt() {
+		return createdAt;
+	}
+
+	public void setCreatedAt(Date createdAt) {
+		this.createdAt = createdAt;
+	}
+
+	public Date getUpdatedAt() {
+		return updatedAt;
+	}
+
+	public void setUpdatedAt(Date updatedAt) {
+		this.updatedAt = updatedAt;
+	}
     
     
     
