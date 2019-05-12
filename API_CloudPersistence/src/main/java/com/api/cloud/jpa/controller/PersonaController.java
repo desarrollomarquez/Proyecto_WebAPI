@@ -36,12 +36,12 @@ public class PersonaController {
     	}
     	else {
     	    
-    		Persona persona = personaRepository.findById(personaId)
-                    .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
+    		Persona personaupdate = personaRepository.findById(persona.getId())
+                    .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", persona.getId()));
 
-            persona.setIdentificacion(personaDetails.getIdentificacion());          
-            persona.setNombres(personaDetails.getNombres());
-            persona.setApellidos(personaDetails.getApellidos());
+    		personaupdate.setIdentificacion(persona.getIdentificacion());          
+    		personaupdate.setNombres(persona.getNombres());
+    		personaupdate.setApellidos(persona.getApellidos());
             
                
             Persona updatedPersona = personaRepository.save(persona);
