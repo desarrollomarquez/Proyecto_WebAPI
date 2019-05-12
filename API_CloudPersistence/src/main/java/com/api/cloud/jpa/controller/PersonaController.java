@@ -34,8 +34,21 @@ public class PersonaController {
     	{
     		return personaRepository.save(persona);	
     	}
-    	
-    	return personaRepository.save(persona);
+    	else {
+    	    
+    		Persona persona = personaRepository.findById(personaId)
+                    .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
+
+            persona.setIdentificacion(personaDetails.getIdentificacion());          
+            persona.setNombres(personaDetails.getNombres());
+            persona.setApellidos(personaDetails.getApellidos());
+            
+               
+            Persona updatedPersona = personaRepository.save(persona);
+            return updatedPersona;
+    		
+    	}
+
     }
 
     @GetMapping("/personas/{id}")
@@ -48,16 +61,7 @@ public class PersonaController {
     public Persona updatePersona(@PathVariable(value = "id") Long personaId,
                                            @Valid @RequestBody Persona personaDetails) {
 
-        Persona persona = personaRepository.findById(personaId)
-                .orElseThrow(() -> new ResourceNotFoundException("Persona", "id", personaId));
-
-        persona.setIdentificacion(personaDetails.getIdentificacion());          
-        persona.setNombres(personaDetails.getNombres());
-        persona.setApellidos(personaDetails.getApellidos());
-        
-           
-        Persona updatedPersona = personaRepository.save(persona);
-        return updatedPersona;
+    
     }
 
     @DeleteMapping("/personas/{id}")
