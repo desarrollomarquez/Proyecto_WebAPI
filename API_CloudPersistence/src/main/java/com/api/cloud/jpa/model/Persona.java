@@ -13,6 +13,17 @@ import java.util.Date;
  * Created by diego on 14/02/19.
  */
 @Entity
+@NamedStoredProcedureQueries({
+    @NamedStoredProcedureQuery(
+        name = "java_procedure_name",
+        procedureName = "SCHEMA_NAME.PACKAGE_NAME.METHOD_OR_PROCEDURE_NAME",
+        parameters = {
+          @StoredProcedureParameter(mode=ParameterMode.IN, name="inputParam1", type=String.class),
+          @StoredProcedureParameter(mode=ParameterMode.IN, name="inputParam2", type=String.class),
+          @StoredProcedureParameter(mode=ParameterMode.OUT, name="outputParam", type=String.class)
+    })
+})
+
 @Table(name = "persona")
 @EntityListeners(AuditingEntityListener.class)
 @JsonIgnoreProperties(value = {"createdAt", "updatedAt"},
@@ -93,3 +104,4 @@ public class Persona {
 
     
 }
+
