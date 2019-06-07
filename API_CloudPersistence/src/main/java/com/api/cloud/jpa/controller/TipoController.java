@@ -28,7 +28,7 @@ public class TipoController {
 
     @PostMapping("/autos")
     public Auto createAuto(@Valid @RequestBody Auto auto) {
-        return autoRepository.save(auto);
+        
         if(auto == "" || auto == null) {
         	
         	Auto auto = autoRepository.findById(autoId)
@@ -42,7 +42,9 @@ public class TipoController {
             return updatedAuto;
         	
         }
-        else {}
+        else {
+        	return autoRepository.save(auto);
+        }
         
     }
 
