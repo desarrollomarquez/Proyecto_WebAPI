@@ -29,8 +29,17 @@ public class TipoController {
     @PostMapping("/autos")
     public Auto createAuto(@Valid @RequestBody Auto auto) {
         return autoRepository.save(auto);
-        if(auto == '' or auto == null) {
+        if(auto == "" || auto == null) {
         	
+        	Auto auto = autoRepository.findById(autoId)
+                    .orElseThrow(() -> new ResourceNotFoundException("Auto", "id", autoId));
+
+            auto.setPlaca(autoDetails.getPlaca());
+            auto.setModelo(autoDetails.getModelo());
+            
+
+            Auto updatedAuto = autoRepository.save(auto);
+            return updatedAuto;
         	
         }
         else {}
