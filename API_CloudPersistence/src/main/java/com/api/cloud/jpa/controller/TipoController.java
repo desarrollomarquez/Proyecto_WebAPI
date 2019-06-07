@@ -29,6 +29,12 @@ public class TipoController {
     @PostMapping("/autos")
     public Auto createAuto(@Valid @RequestBody Auto auto) {
         return autoRepository.save(auto);
+        if() {
+        	
+        	
+        }
+        else {}
+        
     }
 
     @GetMapping("/autos/{id}")

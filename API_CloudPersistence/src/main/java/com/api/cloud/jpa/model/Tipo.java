@@ -20,6 +20,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@SuppressWarnings("deprecation")
 @Entity
 @Table (name = "tipo")
 @EntityListeners(AuditingEntityListener.class)
@@ -40,9 +41,6 @@ public class Tipo {
 	
 	@NotBlank
 	private String cilindraje;
-	
-	
-	
 	
 	@Column(nullable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
