@@ -29,7 +29,7 @@ public class TipoController {
     @PostMapping("/autos")
     public Auto createAuto(@Valid @RequestBody Auto auto) {
         return autoRepository.save(auto);
-        if() {
+        if(auto == '' or auto == null) {
         	
         	
         }
